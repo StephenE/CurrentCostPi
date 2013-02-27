@@ -1,0 +1,22 @@
+[loggers]
+keys=root
+
+[handlers]
+keys=01
+
+[formatters]
+keys=01
+
+[logger_root]
+level=DEBUG
+handlers=01
+
+[handler_01]
+class=logging.handlers.TimedRotatingFileHandler
+level=NOTSET
+formatter=01
+args=('power_monitor.log', 'midnight', 1, 7, None, False, True)
+
+[formatter_01]
+format=%(asctime)s %(levelname)s %(message)s
+datefmt=
